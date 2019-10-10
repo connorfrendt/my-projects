@@ -10,7 +10,6 @@ import HelloWorld from './components/HelloWorld.vue'
 import Header from './components/Header.vue'
 
 export default {
-  name: 'app',
   components: {
     Header,
     HelloWorld
@@ -19,5 +18,8 @@ export default {
 </script>
 
 <style>
-
+  body {
+    background-color: black;
+    color: white;
+  }
 </style>
