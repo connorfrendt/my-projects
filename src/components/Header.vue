@@ -3,7 +3,6 @@
     <header>
       <nav>
         <RouterLink to="/games">Games</RouterLink>
-        <div id="games">Games</div>
         <div id="blogs">Blogs</div>
         <div id="projects">Projects</div>
       </nav>
