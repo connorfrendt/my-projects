@@ -3,12 +3,19 @@
 		<div id="games">Games</div>
 		<div id="blogs">Blogs</div>
 		<div id="projects">Projects</div>
+    <!-- <Games />
+    <Blogs />
+    <Projects /> -->
 	</div>
 </template>
 
 <script>
 export default {
-
+  // components: {
+  //   Games,
+  //   Blogs,
+  //   Projects
+  // }
 }
 </script>
 

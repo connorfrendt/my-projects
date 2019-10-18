@@ -2,16 +2,16 @@
   <div id='sub-header'>
     <img src='../assets/connorpic.jpg' />
     <h1>Welcome to my Vue.js App</h1>
-    <HelloChild />  
+    <HomeChild />  
   </div>
 </template>
 
 <script>
-import HelloChild from './HelloChild'
+import HomeChild from './HomeChild'
 
 export default {
   components: {
-    HelloChild
+    HomeChild
   }
 }
 </script>
