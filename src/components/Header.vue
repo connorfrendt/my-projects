@@ -1,26 +1,24 @@
 <template>
-	<div id="flex">
-		<div id="games">Games</div>
-		<div id="blogs">Blogs</div>
-		<div id="projects">Projects</div>
-    <!-- <Games />
-    <Blogs />
-    <Projects /> -->
+	<div id="header">
+    <header>
+      <nav>
+        <RouterLink to="/games">Games</RouterLink>
+        <div id="games">Games</div>
+        <div id="blogs">Blogs</div>
+        <div id="projects">Projects</div>
+      </nav>
+    </header>
 	</div>
 </template>
 
 <script>
 export default {
-  // components: {
-  //   Games,
-  //   Blogs,
-  //   Projects
-  // }
+  
 }
 </script>
 
 <style>
-#flex {
+#header {
 	display: flex;
 	justify-content: space-around;
 	background: gray;
