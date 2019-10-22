@@ -1,5 +1,6 @@
 <template>
     <div id="header">
+      <RouterLink id="home" to="/">Home</RouterLink>
       <RouterLink id="games" to="/games">Games</RouterLink>
       <div id="blogs">Blogs</div>
       <div id="projects">Projects</div>
@@ -19,13 +20,27 @@ export default {
 	background: gray;
 	padding: 10px;
 }
-#games {
+#home {
   border: 1px solid black;
+  padding: 10px;
 }
+#games {
+  
+  padding: 10px;
+  background-color: white;
+}
+#games:hover {
+  background-color: gray;
+  
+}
+
 #blogs {
 	border: 1px solid black;
+  padding: 10px;
 }
+
 #projects {
 	border: 1px solid black;
+  padding: 10px;
 }
 </style>
