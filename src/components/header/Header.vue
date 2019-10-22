@@ -1,13 +1,9 @@
 <template>
-	<div id="header">
-    <header>
-      <nav>
-        <RouterLink to="/games">Games</RouterLink>
-        <div id="blogs">Blogs</div>
-        <div id="projects">Projects</div>
-      </nav>
-    </header>
-	</div>
+    <div id="header">
+      <RouterLink id="games" to="/games">Games</RouterLink>
+      <div id="blogs">Blogs</div>
+      <div id="projects">Projects</div>
+    </div>
 </template>
 
 <script>
@@ -24,12 +20,12 @@ export default {
 	padding: 10px;
 }
 #games {
-  border-bottom: 1px solid black;
+  border: 1px solid black;
 }
 #blogs {
-	border-bottom: 1px solid black;
+	border: 1px solid black;
 }
 #projects {
-	border-bottom: 1px solid black;
+	border: 1px solid black;
 }
 </style>

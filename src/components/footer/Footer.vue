@@ -1,6 +1,6 @@
 <template>
   <div>
-    <p>This is the Home Child component!</p>
+    <p>This is the Footer component!</p>
     <div id="links">
       <a href="https://www.linkedin.com/in/connorfrendt/"><img src="../../assets/linkedin.png" style="height: 50px" /></a>
       <a href="https://www.github.com/connorfrendt"><img src="../../assets/github.jpg" style="height: 50px" /></a>
