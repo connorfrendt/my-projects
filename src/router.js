@@ -1,5 +1,5 @@
 import VueRouter from 'vue-router';
-import Games from './components/Games.vue';
+import Games from './components/header/games/Games.vue';
 
 export default new VueRouter({
     routes: [

@@ -1,6 +1,6 @@
 <template>
   <div id='sub-header'>
-    <img src='../assets/connorpic.jpg' />
+    <img src='../../assets/connorpic.jpg' />
     <h1>Welcome to my Vue.js App</h1>
     <HomeChild />  
   </div>
