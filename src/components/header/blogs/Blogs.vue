@@ -1,5 +1,5 @@
 <template>
-  
+  <p>BLOGS BLOGS BLOGS</p>
 </template>
 
 <script>

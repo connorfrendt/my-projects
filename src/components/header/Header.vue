@@ -2,8 +2,8 @@
     <div id="header">
       <RouterLink id="home" to="/">Home</RouterLink>
       <RouterLink id="games" to="/games">Games</RouterLink>
-      <div id="blogs">Blogs</div>
-      <div id="projects">Projects</div>
+      <RouterLink id="blogs" to="/blogs">Blogs</RouterLink>
+      <RouterLink id="projects" to="/projects">Projects</RouterLink>
     </div>
 </template>
 
@@ -25,13 +25,11 @@ export default {
   padding: 10px;
 }
 #games {
-  
   padding: 10px;
   background-color: white;
 }
 #games:hover {
   background-color: gray;
-  
 }
 
 #blogs {

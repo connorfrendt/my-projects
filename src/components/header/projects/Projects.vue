@@ -1,5 +1,5 @@
 <template>
-  
+  <p>Projects Galore!!!</p>
 </template>
 
 <script>
