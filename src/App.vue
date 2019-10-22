@@ -2,17 +2,18 @@
   <div id="app">
     <Header />
     <RouterView></RouterView>
+    <Footer></Footer>
   </div>
 </template>
 
 <script>
-import Home from './components/home/Home.vue';
 import Header from './components/header/Header.vue';
 import Footer from './components/footer/Footer';
 
 export default {
   components: {
-    Header
+    Header,
+    Footer
   }
 }
 </script>

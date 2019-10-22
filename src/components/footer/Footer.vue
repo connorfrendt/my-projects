@@ -1,6 +1,5 @@
 <template>
-  <div>
-    <p>This is the Footer component!</p>
+  <div id="footer">
     <div id="links">
       <a href="https://www.linkedin.com/in/connorfrendt/"><img src="../../assets/linkedin.png" style="height: 50px" /></a>
       <a href="https://www.github.com/connorfrendt"><img src="../../assets/github.jpg" style="height: 50px" /></a>
@@ -15,8 +14,14 @@ export default {
 </script>
 
 <style>
+#footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
 #links {
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
 }
 </style>

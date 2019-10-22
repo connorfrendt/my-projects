@@ -19,6 +19,7 @@ export default {
 	justify-content: space-around;
 	background: gray;
 	padding: 10px;
+  border-radius: 5px;
 }
 #home {
   border: 1px solid black;
@@ -26,10 +27,12 @@ export default {
 }
 #games {
   padding: 10px;
-  background-color: white;
+  background-color: gray;
+  border: 1px solid black;
 }
 #games:hover {
-  background-color: gray;
+  background-color: darkgray;
+  color: white;
 }
 
 #blogs {
