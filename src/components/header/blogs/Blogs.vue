@@ -1,5 +1,6 @@
 <template>
   <div id="grid">
+    <!-- Eventually, these will be links -->
     <div class="blog">Blog 1</div>
     <div class="blog">Blog 2</div>
     <div class="blog">Blog 3</div>

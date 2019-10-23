@@ -1,6 +1,9 @@
 <template>
   <div>
-    <p>GAMES HERE</p>
+    <h3>World of Warcraft</h3>
+    <h3>Minecraft</h3>
+    <h3>Hearthstone</h3>
+    <h3>Pokemon</h3>
   </div>
 </template>
 
