@@ -4,7 +4,7 @@
       <RouterLink id="games" to="/games">Games</RouterLink>
       <RouterLink id="blogs" to="/blogs">Blogs</RouterLink>
       <RouterLink id="projects" to="/projects">Projects</RouterLink>
-      <button @click="sendEmail"></button>
+      <button @click="sendEmail">Send Email</button>
     </div>
 </template>
 
@@ -21,6 +21,7 @@ export default {
 <style>
 #header {
 	display: flex;
+  justify-content: space-around;
 	background: gray;
 	padding: 10px;
 }

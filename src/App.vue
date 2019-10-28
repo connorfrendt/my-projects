@@ -19,12 +19,12 @@ export default {
 </script>
 
 <style>
-  #app {
+  /* #app {
     height: 100vh;
     display: grid;
     grid-template-columns: 80px 1fr;
     grid-template-rows: 200px 1fr 50px;
-  }
+  } */
   
   body {
     background-color: black;
