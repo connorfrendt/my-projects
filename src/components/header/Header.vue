@@ -16,10 +16,8 @@ export default {
 <style>
 #header {
 	display: flex;
-	justify-content: space-around;
 	background: gray;
 	padding: 10px;
-  width: 100%;
 }
 #home {
   border: 1px solid black;
