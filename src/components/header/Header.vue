@@ -4,17 +4,12 @@
       <RouterLink id="games" to="/games" style="text-decoration: none">Games</RouterLink>
       <RouterLink id="blogs" to="/blogs" style="text-decoration: none">Blogs</RouterLink>
       <RouterLink id="projects" to="/projects" style="text-decoration: none">Projects</RouterLink>
-      <!-- <button @click="sendEmail">Send Email</button> -->
     </div>
 </template>
 
 <script>
 export default {
-  // methods: {
-  //   sendEmail() {
-  //     window.open('mailto:hcgcustomersupport@harman.com?subject=Moderated Image Content&body=Purchase Order Number: ' + '\r\n' + 'Moderation Status: Cancelled');
-  //   }
-  // }
+
 }
 </script>
 
