@@ -1,23 +1,23 @@
 <template>
-  <div>
-    <h3>World of Warcraft</h3>
-    <button @click="searchToon"></button>
-    <!-- <h3>Minecraft</h3>
-    <h3>Hearthstone</h3>
-    <h3>Pokemon</h3> -->
+  <div id="games-grid">
+    <RouterLink class="game-topics" to="/games/worldofwarcraft">World of Warcraft</RouterLink>
+    <div class="game-topics">Hearthstone</div>
+    <div class="game-topics">Minecraft</div>
+    <div class="game-topics">Pokemon</div>
   </div>
 </template>
 
 <script>
-import axios from 'axios'
-import wowCharApi from '../../services/wowCharApi.js';
 
 export default {
   methods: {
     searchToon() {
       wowCharApi.getToon()
         .then(response => {
-          console.log('RESULTS HERE', response.playable_race.name);
+          const charName = response.character.name;
+          const charRace = response.playable_race.name;
+          const charClass = response.playable_class.name;
+          // console.log(response.character.name,'the', response.playable_race.name, response.playable_class.name);
         })
     }
   },
@@ -28,5 +28,15 @@ export default {
 </script>
 
 <style>
+  #games-grid {
+    display: grid;
+    grid-template: 1fr 1fr / 1fr 1fr;
+    text-align: center;
+    height: 80vh;
+  }
 
+  .game-topics {
+    background-color: maroon;
+    margin: 5px;
+  }
 </style>

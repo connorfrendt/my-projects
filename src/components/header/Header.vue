@@ -1,9 +1,9 @@
 <template>
     <div id="header">
-      <RouterLink id="home" to="/" style="text-decoration: none">Home</RouterLink>
-      <RouterLink id="games" to="/games" style="text-decoration: none">Games</RouterLink>
-      <RouterLink id="blogs" to="/blogs" style="text-decoration: none">Blogs</RouterLink>
-      <RouterLink id="projects" to="/projects" style="text-decoration: none">Projects</RouterLink>
+      <RouterLink class="topics" to="/" style="text-decoration: none">HOME</RouterLink>
+      <RouterLink class="topics" to="/games" style="text-decoration: none">GAMES</RouterLink>
+      <RouterLink class="topics" to="/blogs" style="text-decoration: none">BLOGS</RouterLink>
+      <RouterLink class="topics" to="/projects" style="text-decoration: none">PROJECTS</RouterLink>
     </div>
 </template>
 
@@ -14,44 +14,21 @@ export default {
 </script>
 
 <style>
-#header {
+  #header {
 	display: flex;
   justify-content: space-around;
 	background: gray;
   text-align: center;
 }
-#home {
+
+.topics{
   width: 100%;
   padding: 10px;
 }
-#home:hover {
+.topics:hover {
   background-color: darkgray;
 }
-
-#games {
-  width: 100%;
-  padding: 10px;
-  border-left: 1px solid black;
-}
-#games:hover {
-  background-color: darkgray;
-}
-
-#blogs {
-  width: 100%;
-  padding: 10px;
-	border-left: 1px solid black;
-}
-#blogs:hover {
-  background-color: darkgray;
-}
-
-#projects {
-  width: 100%;
-  padding: 10px;
-	border-left: 1px solid black;
-}
-#projects:hover {
-  background-color: darkgrey;
+.topics:visited {
+  color: black;
 }
 </style>
