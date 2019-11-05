@@ -1,6 +1,6 @@
 <template>
   <div id="games-grid">
-    <RouterLink class="game-topics" to="/games/worldofwarcraft">World of Warcraft</RouterLink>
+    <RouterLink id="wow" class="game-topics" to="/games/worldofwarcraft">World of Warcraft</RouterLink>
     <div class="game-topics">Hearthstone</div>
     <div class="game-topics">Minecraft</div>
     <div class="game-topics">Pokemon</div>
@@ -28,6 +28,12 @@ export default {
 </script>
 
 <style>
+  #wow {
+    background: url('../../../assets/wlogo.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
   #games-grid {
     display: grid;
     grid-template: 1fr 1fr / 1fr 1fr;

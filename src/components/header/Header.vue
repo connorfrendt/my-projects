@@ -27,6 +27,7 @@ export default {
 }
 .topics:hover {
   background-color: darkgray;
+  transition: 0.5s;
 }
 .topics:visited {
   color: black;
