@@ -6,28 +6,32 @@
       </RouterLink>
     </button>
     
-    <button id="toon" @click="searchToon">CLICK HERE</button>
     <div>WOW</div>
+    <div>{{ charFaction }}</div>
   </div>
 </template>
 
 <script>
-import wowCharApi from '../services/wowCharApi.js';
+// import wowCharApi from '../services/wowCharApi.js';
 
 export default {
-  methods: {
-    searchToon() {
-      wowCharApi.getToon()
-        .then(response => {
-          const charName = response.character.name;
-          const charRace = response.playable_race.name;
-          const charClass = response.playable_class.name;
-          console.log(response.character.name,'the', response.playable_race.name, response.playable_class.name);
-        })
+  data() {
+    return {
+      charFaction: '',
+      charName: '',
+      
     }
   },
-  create() {
-    this.searchToon();
+  mounted() {
+    fetch('https://us.api.blizzard.com/profile/wow/character/greymane/kretyn/appearance?namespace=profile-us&locale=en_US&access_token=USpr1gflBDt1D1UwmsoHtF09pEYIX4yjrH', {
+      method: 'GET'
+    })
+      .then(res => {
+        return res.json();
+      })
+      .then(jsonData => {
+        this.charFaction = jsonData.faction.name;
+      })
   }
 }
 </script>
