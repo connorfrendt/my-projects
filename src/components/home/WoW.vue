@@ -6,32 +6,35 @@
       </RouterLink>
     </button>
     
-    <div>WOW</div>
-    <div>{{ charFaction }}</div>
+    <div>
+      {{ toonName }}, the {{ toonRace }} {{ toonSpec }} {{ toonClass }}, champion of the {{ toonFaction }}!
+    </div>
   </div>
 </template>
 
 <script>
-// import wowCharApi from '../services/wowCharApi.js';
+import wowCharApi from '../services/wowCharApi';
 
 export default {
   data() {
     return {
-      charFaction: '',
-      charName: '',
-      
+      toonName: '',
+      toonFaction: '',
+      toonRace: '',
+      toonSpec: '',
+      toonClass: '',
     }
   },
-  mounted() {
-    fetch('https://us.api.blizzard.com/profile/wow/character/greymane/kretyn/appearance?namespace=profile-us&locale=en_US&access_token=USpr1gflBDt1D1UwmsoHtF09pEYIX4yjrH', {
-      method: 'GET'
-    })
+  created() {
+    wowCharApi.getToon()
       .then(res => {
-        return res.json();
+        this.toonName = res.character.name;
+        this.toonFaction = res.faction.name;
+        this.toonSpec = res.active_spec.name;
+        this.toonRace = res.playable_race.name;
+        this.toonClass = res.playable_class.name;
       })
-      .then(jsonData => {
-        this.charFaction = jsonData.faction.name;
-      })
+    
   }
 }
 </script>
