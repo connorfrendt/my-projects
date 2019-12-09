@@ -10,20 +10,7 @@
 <script>
 
 export default {
-  methods: {
-    searchToon() {
-      wowCharApi.getToon()
-        .then(response => {
-          const charName = response.character.name;
-          const charRace = response.playable_race.name;
-          const charClass = response.playable_class.name;
-          // console.log(response.character.name,'the', response.playable_race.name, response.playable_class.name);
-        })
-    }
-  },
-  create() {
-    this.searchToon();
-  }
+  
 }
 </script>
 

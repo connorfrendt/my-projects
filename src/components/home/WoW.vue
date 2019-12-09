@@ -11,7 +11,7 @@
     </div>
     <img :src="getToonBust"/>
     <img :src="getToonAvatar"/><br />
-    <img :src="getToonFull" style="height: 400px"/>
+    <img :src="getToonFull" />
   </div>
 </template>
 
