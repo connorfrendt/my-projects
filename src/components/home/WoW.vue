@@ -9,7 +9,9 @@
     <div>
       {{ toonName }}, the {{ toonRace }} {{ toonSpec }} {{ toonClass }}, champion of the {{ toonFaction }}!
     </div>
-    <img :src="getToonImage"/>
+    <img :src="getToonBust"/>
+    <img :src="getToonAvatar"/><br />
+    <img :src="getToonFull" style="height: 400px"/>
   </div>
 </template>
 
@@ -25,7 +27,9 @@ export default {
       toonSpec: '',
       toonClass: '',
       toonImg: '',
-      getToonImage: Function
+      getToonBust: '',
+      getToonAvatar: '',
+      getToonFull: ''
     }
   },
   created() {
@@ -37,9 +41,12 @@ export default {
         this.toonRace = res.playable_race.name;
         this.toonClass = res.playable_class.name;
       });
-    wowCharApi.getToonImage()
+    wowCharApi.getToonImages()
       .then(res => {
-        this.getToonImage = res.bust_url;
+        console.log(res);
+        this.getToonBust = res.bust_url;
+        this.getToonAvatar = res.avatar_url;
+        this.getToonFull = res.render_url;
       })
   }
 }
