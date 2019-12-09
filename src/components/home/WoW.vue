@@ -9,6 +9,7 @@
     <div>
       {{ toonName }}, the {{ toonRace }} {{ toonSpec }} {{ toonClass }}, champion of the {{ toonFaction }}!
     </div>
+    <img :src="getToonImage"/>
   </div>
 </template>
 
@@ -23,6 +24,8 @@ export default {
       toonRace: '',
       toonSpec: '',
       toonClass: '',
+      toonImg: '',
+      getToonImage: Function
     }
   },
   created() {
@@ -33,8 +36,11 @@ export default {
         this.toonSpec = res.active_spec.name;
         this.toonRace = res.playable_race.name;
         this.toonClass = res.playable_class.name;
+      });
+    wowCharApi.getToonImage()
+      .then(res => {
+        this.getToonImage = res.bust_url;
       })
-    
   }
 }
 </script>
