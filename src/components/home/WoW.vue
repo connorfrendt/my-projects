@@ -16,7 +16,6 @@
 </template>
 
 <script>
-// import wowCharApi from '../services/wowCharApi';
 import axios from 'axios';
 
 export default {
@@ -74,21 +73,6 @@ export default {
   created() {
     this.getToon();
     this.getToonImages();
-    // wowCharApi.getToon()
-    //   .then(res => {
-    //     this.toonName = res.character.name;
-        // this.toonFaction = res.faction.name;
-        // this.toonSpec = res.active_spec.name;
-        // this.toonRace = res.playable_race.name;
-        // this.toonClass = res.playable_class.name;
-    //   });
-    // wowCharApi.getToonImages()
-    //   .then(res => {
-    //     console.log('*******RES*******', res);
-    //     this.getToonBust = res.bust_url;
-    //     this.getToonAvatar = res.avatar_url;
-    //     this.getToonFull = res.render_url;
-    //   })
   }
 }
 </script>
