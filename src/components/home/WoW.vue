@@ -23,6 +23,7 @@ export default {
     return {
       toon: [],
       toonImgs: [],
+      toonAllGear: [],
       toonName: '',
       toonFaction: '',
       toonRace: '',
@@ -31,13 +32,14 @@ export default {
       toonBust: '',
       toonAvatar: '',
       toonFull: '',
-      token: ''
+      token: '',
+      toonGear: ''
     }
   },
   methods: {
     getToon() {
       axios
-        .get(process.env.VUE_APP_GET_TOON)
+        .get(process.env.VUE_APP_TOON_APPEARANCE)
         .then(res => {
           this.toon = res.data;
           let charData = this.toon;
@@ -55,9 +57,8 @@ export default {
         })
     },
     getToonImages() {
-      console.log(process.env);
       axios
-        .get(process.env.VUE_APP_GET_TOON_IMAGES)
+        .get(process.env.VUE_APP_TOON_IMAGES)
         .then(res => {
           this.toonImgs = res.data;
           let charImgs = this.toonImgs;
@@ -68,11 +69,25 @@ export default {
           this.toonAvatar = charImgs.avatar_url;
           this.toonFull = charImgs.render_url;
         })
+    },
+    getToonGear() {
+      axios
+        .get(process.env.VUE_APP_TOON_GEAR)
+        .then(res => {
+          console.log(res.data);
+          this.toonAllGear = res.data;
+          let allGear = this.toonAllGear;
+          return allGear;
+        })
+        .then(allGear => {
+          console.log(allGear);
+        })
     }
   },
   created() {
     this.getToon();
     this.getToonImages();
+    this.getToonGear();
   }
 }
 </script>
