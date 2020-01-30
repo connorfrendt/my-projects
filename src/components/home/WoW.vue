@@ -9,45 +9,86 @@
     <div>
       {{ toonName }}, the {{ toonRace }} {{ toonSpec }} {{ toonClass }}, champion of the {{ toonFaction }}!
     </div>
-    <img :src="getToonBust"/>
-    <img :src="getToonAvatar"/><br />
-    <img :src="getToonFull" />
+    <img :src="toonBust"/>
+    <img :src="toonAvatar"/><br />
+    <img :src="toonFull" style="height: 300px"/>
   </div>
 </template>
 
 <script>
-import wowCharApi from '../services/wowCharApi';
+// import wowCharApi from '../services/wowCharApi';
+import axios from 'axios';
 
 export default {
   data() {
     return {
+      toon: [],
+      toonImgs: [],
       toonName: '',
       toonFaction: '',
       toonRace: '',
       toonSpec: '',
       toonClass: '',
-      toonImg: '',
-      getToonBust: '',
-      getToonAvatar: '',
-      getToonFull: ''
+      toonBust: '',
+      toonAvatar: '',
+      toonFull: '',
+      token: ''
+    }
+  },
+  methods: {
+    getToon() {
+      axios
+        .get(process.env.VUE_APP_GET_TOON)
+        .then(res => {
+          this.toon = res.data;
+          let charData = this.toon;
+          return charData;
+        })
+        .then(charData => {
+          this.toonName = charData.character.name;
+          this.toonFaction = charData.faction.name;
+          this.toonSpec = charData.active_spec.name;
+          this.toonRace = charData.playable_race.name;
+          this.toonClass = charData.playable_class.name;
+        })
+        .catch(err => {
+          console.error(err);
+        })
+    },
+    getToonImages() {
+      console.log(process.env);
+      axios
+        .get(process.env.VUE_APP_GET_TOON_IMAGES)
+        .then(res => {
+          this.toonImgs = res.data;
+          let charImgs = this.toonImgs;
+          return charImgs;
+        })
+        .then(charImgs => {
+          this.toonBust = charImgs.bust_url;
+          this.toonAvatar = charImgs.avatar_url;
+          this.toonFull = charImgs.render_url;
+        })
     }
   },
   created() {
-    wowCharApi.getToon()
-      .then(res => {
-        this.toonName = res.character.name;
-        this.toonFaction = res.faction.name;
-        this.toonSpec = res.active_spec.name;
-        this.toonRace = res.playable_race.name;
-        this.toonClass = res.playable_class.name;
-      });
-    wowCharApi.getToonImages()
-      .then(res => {
-        console.log(res);
-        this.getToonBust = res.bust_url;
-        this.getToonAvatar = res.avatar_url;
-        this.getToonFull = res.render_url;
-      })
+    this.getToon();
+    this.getToonImages();
+    // wowCharApi.getToon()
+    //   .then(res => {
+    //     this.toonName = res.character.name;
+        // this.toonFaction = res.faction.name;
+        // this.toonSpec = res.active_spec.name;
+        // this.toonRace = res.playable_race.name;
+        // this.toonClass = res.playable_class.name;
+    //   });
+    // wowCharApi.getToonImages()
+    //   .then(res => {
+    //     console.log('*******RES*******', res);
+    //     this.getToonBust = res.bust_url;
+    //     this.getToonAvatar = res.avatar_url;
+    //     this.getToonFull = res.render_url;
+    //   })
   }
 }
 </script>
