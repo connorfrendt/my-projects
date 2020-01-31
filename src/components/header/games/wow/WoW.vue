@@ -2,21 +2,27 @@
   <div>
     <button id="back">
       <RouterLink id="link" to="/games">
-        <img id="img" src="../../assets/back-arrow.png" height=35px/>
+        <img id="img" src="../../../../assets/back-arrow.png" height=35px/>
       </RouterLink>
     </button>
     
-    <div>
+    <div style="text-align: center">
       {{ toonName }}, the {{ toonRace }} {{ toonSpec }} {{ toonClass }}, champion of the {{ toonFaction }}!
     </div>
-    <img :src="toonBust"/>
-    <img :src="toonAvatar"/><br />
-    <img :src="toonFull" style="height: 300px"/>
+    <br />
+    <Head
+      :headId="headId"
+    />
+    <div style="text-align: center">
+      
+      <img :src="toonFull" style="height: 450px"/>
+    </div>
   </div>
 </template>
 
 <script>
 import axios from 'axios';
+import Head from './gear/Head';
 
 export default {
   data() {
@@ -24,17 +30,19 @@ export default {
       toon: [],
       toonImgs: [],
       toonAllGear: [],
+      toonHead: '',
       toonName: '',
       toonFaction: '',
       toonRace: '',
       toonSpec: '',
       toonClass: '',
-      toonBust: '',
-      toonAvatar: '',
       toonFull: '',
       token: '',
-      toonGear: ''
+      headId: 0
     }
+  },
+  components: {
+    Head
   },
   methods: {
     getToon() {
@@ -65,22 +73,22 @@ export default {
           return charImgs;
         })
         .then(charImgs => {
-          this.toonBust = charImgs.bust_url;
-          this.toonAvatar = charImgs.avatar_url;
           this.toonFull = charImgs.render_url;
+        })
+        .catch(err => {
+          console.error(err);
         })
     },
     getToonGear() {
       axios
         .get(process.env.VUE_APP_TOON_GEAR)
         .then(res => {
-          console.log(res.data);
-          this.toonAllGear = res.data;
-          let allGear = this.toonAllGear;
-          return allGear;
+          this.headId = res.data.equipped_items[0].item.id;
+          console.log('Wow.vue current headId', this.headId);
+          return this.headId;
         })
-        .then(allGear => {
-          console.log(allGear);
+        .catch(err => {
+          console.error(err);
         })
     }
   },
