@@ -1,38 +1,44 @@
 <template>
     <div>
         <div>
-            HEAD STUFF
+            Helm
         </div>
-        <img :src="headPic" />
+        <img :src="foo2" />
     </div>
 </template>
 
 <script>
 import axios from 'axios';
+
 export default {
-    props: {
-        headId: Number,
-        headPic: ''
-    },
-    methods: {
-        getToonGear() {
-            console.log('here', this.headId);
-            axios
-                .get(`https://us.api.blizzard.com/data/wow/media/item/166696?namespace=static-us&locale=en_US&access_token=US478XeA0Ygq1IBP4xenEggbq3KzPsQQm4`)
-                .then(res => {
-                    this.headPic = res.data.assets[0].value;
-                    
-                    console.log('asdfasdf', res.data.assets[0].value);
-                })
+    data() {
+        return {
+            foo: [],
+            foo2: ''
         }
     },
-    created() {
-        this.getToonGear();
+    props: {
+        headId: {
+            type: Number,
+            required: true
+        }
     },
     computed: {
         printOutputURL() {
-            let foo = `https://us.api.blizzard.com/data/wow/media/item/166696?namespace=static-us&locale=en_US&access_token=US478XeA0Ygq1IBP4xenEggbq3KzPsQQm4`;
-            return foo;
+            console.log('head.vue headId', this.headId);
+            axios
+                .get(process.env.VUE_APP_GEAR_DB + `${this.headId}` + process.env.VUE_APP_GEAR_DB_TOKEN)
+                .then(res => {
+                    this.foo = res.data.assets[0].value;
+                    let bar = this.foo;
+                    return bar;
+                })
+                .then(bar => {
+                    this.foo2 = bar;
+                })
+                .catch(err => {
+                    console.error(err);
+                })
         }
     }
 };

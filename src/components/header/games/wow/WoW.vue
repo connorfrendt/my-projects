@@ -1,23 +1,24 @@
 <template>
-  <div>
-    <button id="back">
-      <RouterLink id="link" to="/games">
-        <img id="img" src="../../../../assets/back-arrow.png" height=35px/>
-      </RouterLink>
-    </button>
-    
-    <div style="text-align: center">
-      {{ toonName }}, the {{ toonRace }} {{ toonSpec }} {{ toonClass }}, champion of the {{ toonFaction }}!
+    <div>
+        <button id="back">
+            <RouterLink id="link" to="/games">
+                <img id="img" src="../../../../assets/back-arrow.png" height=35px/>
+            </RouterLink>
+        </button>
+        
+        <div style="text-align: center">
+            {{ toonName }}, the {{ toonRace }} {{ toonSpec }} {{ toonClass }}, champion of the {{ toonFaction }}!
+        </div>
+        <br />
+
+        <Head
+            :headId="headId"
+        />
+        
+        <div style="text-align: center">
+            <img :src="toonFull" style="height: 450px"/>
+        </div>
     </div>
-    <br />
-    <Head
-      :headId="headId"
-    />
-    <div style="text-align: center">
-      
-      <img :src="toonFull" style="height: 450px"/>
-    </div>
-  </div>
 </template>
 
 <script>
@@ -85,7 +86,6 @@ export default {
         .then(res => {
           this.headId = res.data.equipped_items[0].item.id;
           console.log('Wow.vue current headId', this.headId);
-          return this.headId;
         })
         .catch(err => {
           console.error(err);
