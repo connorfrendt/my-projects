@@ -11,9 +11,9 @@
         </div>
         <br />
 
-        <Head
+        <!-- <Head
             :headId="headId"
-        />
+        /> -->
         
         <div style="text-align: center">
             <img :src="toonFull" style="height: 450px"/>
@@ -23,7 +23,7 @@
 
 <script>
 import axios from 'axios';
-import Head from './gear/Head';
+// import Head from './gear/Head';
 
 export default {
   data() {
@@ -38,12 +38,11 @@ export default {
       toonSpec: '',
       toonClass: '',
       toonFull: '',
-      token: '',
       headId: 0
     }
   },
   components: {
-    Head
+    // Head
   },
   methods: {
     getToon() {
@@ -95,7 +94,7 @@ export default {
   created() {
     this.getToon();
     this.getToonImages();
-    this.getToonGear();
+    // this.getToonGear();
   }
 }
 </script>

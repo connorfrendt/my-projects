@@ -3,7 +3,7 @@
         <div>
             Helm
         </div>
-        <img :src="foo2" />
+        <img :src="printOutputURL" />
     </div>
 </template>
 
