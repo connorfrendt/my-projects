@@ -18,7 +18,8 @@ export default {
   #wow {
     background: url('../../../assets/wlogo.png');
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: contain;
+    text-align: center;
   }
 
   #games-grid {
