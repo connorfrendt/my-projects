@@ -1,9 +1,10 @@
 <template>
     <div id="header">
-      <RouterLink class="topics" to="/" style="text-decoration: none">HOME</RouterLink>
-      <RouterLink class="topics" to="/games" style="text-decoration: none">GAMES</RouterLink>
-      <RouterLink class="topics" to="/blogs" style="text-decoration: none">BLOGS</RouterLink>
-      <RouterLink class="topics" to="/projects" style="text-decoration: none">PROJECTS</RouterLink>
+      <RouterLink class="topics" to="/" style="text-decoration: none">Home</RouterLink>
+      <!-- <RouterLink class="topics" to="/games" style="text-decoration: none">GAMES</RouterLink> -->
+      <RouterLink class="topics" to="/resume" style="text-decoration: none">Skills & Technologies</RouterLink>
+      <RouterLink class="topics" to="/projects" style="text-decoration: none">Projects</RouterLink>
+      <RouterLink class="topics" to="/blogs" style="text-decoration: none">Blogs</RouterLink>
     </div>
 </template>
 
